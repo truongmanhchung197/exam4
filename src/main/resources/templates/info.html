@@ -13,7 +13,7 @@
 <p th:text="'GDP: '+${city.getGdp()} "></p>
 <p>Giới thiệu</p>
 <p th:text="${city.getDescription()}"></p>
-<a th:href="@{/city/edit/__${city.getId()}__}">Chỉnh sửa</a>
-<a th:href="@{/city/delete/__${city.getId()}__}">Xóa</a>
+<button><a th:href="@{/city/edit/__${city.getId()}__}">Chỉnh sửa</a></button>
+<button><a th:href="@{/city/delete/__${city.getId()}__}">Xóa</a></button>
 </body>
 </html>
