@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Danh sách thành phố</h1>
-<a>Thêm thành phố</a>
+<a href="/city/create">Thêm thành phố</a><br/>
 <table class="table">
 
     <thead class="thead-dark">
@@ -25,7 +25,7 @@
             <td><a th:text="${city.getName()}" th:href="@{'/city/info/'+${city.getId()}}"></a></td>
             <td th:text="${city.getCountry().getName()}"></td>
             <td>
-                <a th:href="@{'/city/edit/'+${city.getId()}}">Chỉnh sửa</a>
+                <a th:href="@{'/city/edit/'+${city.getId()}}">Chỉnh sửa</a>/
                 <a th:href="@{'/city/delete/'+${city.getId}}">Xóa</a>
             </td>
         </tr>

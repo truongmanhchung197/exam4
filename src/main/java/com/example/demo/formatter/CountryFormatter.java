@@ -22,7 +22,7 @@ public class CountryFormatter implements Formatter<Country> {
 
     @Override
     public Country parse(String text, Locale locale)  throws ParseException {
-        return countryService.findById(Long.parseLong(text)).get();
+        return countryService.findByName(text);
 
     }
 

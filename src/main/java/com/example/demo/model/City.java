@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table
 public class City {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
     private Float area;

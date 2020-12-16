@@ -35,7 +35,7 @@ public class CItyController {
     public void saveCity(@ModelAttribute City city, HttpServletResponse response){
         cityService.save(city);
         try {
-            response.sendRedirect("/city/create");
+            response.sendRedirect("/city");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -50,7 +50,17 @@ public class CItyController {
     public ModelAndView showFormEdit(@PathVariable Long id){
         ModelAndView modelAndView = new ModelAndView("edit");
         modelAndView.addObject("city",cityService.findById(id).get());
+        modelAndView.addObject("listCountry",countryService.findAll());
         return modelAndView;
+    }
+    @PostMapping("/edit")
+    public void editCity(@ModelAttribute City city, HttpServletResponse response){
+        cityService.save(city);
+        try {
+            response.sendRedirect("/city/info/"+city.getId());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     @GetMapping("/delete/{id}")
     public void deleteCity(@PathVariable Long id, HttpServletResponse response){
