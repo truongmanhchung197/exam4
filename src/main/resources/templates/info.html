@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<th:block th:object="${city}">
+    <h1 th:text="'Thành phố'+${city.getName()}"></h1>
+    <p th:text="'Tên: '+${city.getName()}"></p>
+    <p th:text="'Quốc gia: '+${city.getCountry().getName()}"></p>
+    <p th:text="'Diện tích: '${city.getArea()}"></p>
+    <p th:text="'Dân số: '+${city.getPopulation()}"></p>
+    <p th:text="'GDP: '+${city.getGdp()} "></p>
+    <p>Giới thiệu</p>
+    <p th:text="${city.getDescription()}"></p>
+    <a th:href="@{'/edit/'+${city.getId()}}"></a>
+    <a th:href="@{'/delete/'+${city.getId()}}"></a>
+</th:block>
+</body>
+</html>
